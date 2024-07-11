@@ -14,3 +14,8 @@ Utilizando as tecnologias:
 * C#
 * MVC
 * Console Application
+
+## Caminhos de acesso aos dados da API em execução
+//localhost:64195/api/produto
+//localhost:64195/api/usuario
+//localhost:64195/api/usuario/idUsuario
