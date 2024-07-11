@@ -102,6 +102,7 @@ namespace Client
                 //Pega o usuario
                 usuario = await Get(url.PathAndQuery);
                 MostraUsuario(usuario);
+                Console.WriteLine("Usuario salvo...\n");
 
                 //Atualiza usuario
                 //Console.WriteLine("Atualizando usuario...");
@@ -118,7 +119,7 @@ namespace Client
                 //var statusCode = await Delete(usuario.Id);
                 //Console.WriteLine($"Deletado (HTTP Status = {(int)statusCode})");
 
-                //Mostra todos usuarios                
+                //Lista todos usuarios                
                 Console.WriteLine("Lista de usuários: ");
                 int ultimoUsuario = usuario.Id;
                 for (int i = 1; i <= ultimoUsuario; i++)
@@ -128,7 +129,7 @@ namespace Client
                 }
 
                 //Busca determinado usuario                                
-                Console.Write("Selecione o id de um usuário ou 'x' para abortar: ");
+                Console.Write("\nSelecione o id de um usuário ou 'x' para abortar: ");
                 while (entrada != "x")
                 {
                     entrada = Console.ReadLine();
