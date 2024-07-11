@@ -5,7 +5,11 @@
 ## Introducao
 
 Cliente JSON para testes de comunicação API com a aplicação Servidor JSON, essa parte da aplicação possui as classes de leitura
-e possibilita realizar requisições, utilizando as tecnologias:
+e possibilita realizar requisições.
+
+A cada nova execução do sistema no lado Cliente um novo usuário é criado do lado Server
+
+Utilizando as tecnologias:
 
 * C#
 * MVC

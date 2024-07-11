@@ -75,6 +75,8 @@ namespace Client
             string[] senha = { "71nr6ad17r", "574m156e54", "i.g61i749", "9y871sr", "6c52.v", ".et8mam8s" };
             string[] cnpj = { "20516886000138", "21347679000160", "18781070000190", "09166603000132", "23441261000142", "21161690000130" };
             string[] razaoSocial = { "SAAE DE CORREGO FUNDO", "SAAE DE GUANHAES", "CAMARA PASSOS", "CISAB SUL - BOA ESPERANCA", "CISAB VICOSA", "DEMSUR MURIAE" };
+
+            //Sorteia index
             int index = random.Next(login.Length);
 
             //Conexao Localhost
