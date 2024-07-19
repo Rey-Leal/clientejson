@@ -8,15 +8,15 @@ namespace Client
 
         public Usuario(int id, string login, string nome, string cpfCnpj, string email, bool administrador, string token, string senha, EntesAutorizados[] entesAutorizados)
         {
-            Id = id;
-            Login = login ?? throw new ArgumentNullException(nameof(login));
-            Nome = nome ?? throw new ArgumentNullException(nameof(nome));
-            CpfCnpj = cpfCnpj ?? throw new ArgumentNullException(nameof(cpfCnpj));
-            Email = email ?? throw new ArgumentNullException(nameof(email));
-            Administrador = administrador;
-            Token = token ?? throw new ArgumentNullException(nameof(token));
-            Senha = senha ?? throw new ArgumentNullException(nameof(senha));
-            EntesAutorizados = entesAutorizados ?? throw new ArgumentNullException(nameof(entesAutorizados));
+            this.Id = id;
+            this.Login = login ?? throw new ArgumentNullException(nameof(login));
+            this.Nome = nome ?? throw new ArgumentNullException(nameof(nome));
+            this.CpfCnpj = cpfCnpj ?? throw new ArgumentNullException(nameof(cpfCnpj));
+            this.Email = email ?? throw new ArgumentNullException(nameof(email));
+            this.Administrador = administrador;
+            this.Token = token ?? throw new ArgumentNullException(nameof(token));
+            this.Senha = senha ?? throw new ArgumentNullException(nameof(senha));
+            this.EntesAutorizados = entesAutorizados ?? throw new ArgumentNullException(nameof(entesAutorizados));
         }
 
         public int Id { get; set; }
