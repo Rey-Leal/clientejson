@@ -61,34 +61,34 @@ namespace Client
 
         static async Task ExecucaoAssincrona()
         {
-            string jsonString;
-            string arquivo = "Arquivo.json";
-            string entrada = "";
-
-            //Gera cadastros aleatorios
-            Random random = new Random();
-            string[] login = { "Carolina", "Natacha", "Eli", "Silvestre", "Isabelly", "Luci" };
-            string[] nome = { "Carolina Adelia da Silva Soares", "Natacha Resende", "Elielthon Pereira de Araujo", "Silvestre Nunes de Jesus Silva", "Isabelly Santos Assunção", "Lucilene Beltrão Castro" };
-            string[] cpfCnpj = { "08930229697", "05092615664", "05471641655", "02064837671", "06740401632", "85844560663" };
-            string[] email = { "carolina@gmail.com", "nat@gmail.com", "eli@gmail.com", "princess@gmail.com", "isa@gmail.com", "luci@gmail.com" };
-            string[] token = { "4gs6d4g6fsd", "16as1f9af", "41v9r4a", "87e9sa7f9sa7", "321da3d46", "j9k8g4hjn6." };
-            string[] senha = { "71nr6ad17r", "574m156e54", "i.g61i749", "9y871sr", "6c52.v", ".et8mam8s" };
-            string[] cnpj = { "20516886000138", "21347679000160", "18781070000190", "09166603000132", "23441261000142", "21161690000130" };
-            string[] razaoSocial = { "SAAE DE CORREGO FUNDO", "SAAE DE GUANHAES", "CAMARA PASSOS", "CISAB SUL - BOA ESPERANCA", "CISAB VICOSA", "DEMSUR MURIAE" };
-
-            //Sorteia index
-            int index = random.Next(login.Length);
-
-            //Conexao Localhost
-            cliente.BaseAddress = new Uri("http://localhost:64195/");
-            //Conexao Web
-            //cliente.BaseAddress = new Uri("https://pncp.gov.br/api/pncp/v1/usuarios/");
-
-            cliente.DefaultRequestHeaders.Accept.Clear();
-            cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
             try
             {
+                string jsonString;
+                string arquivo = "Arquivo.json";
+                string entrada = "";
+
+                //Cadastros aleatorios            
+                string[] login = { "Carolina", "Natacha", "Eli", "Silvestre", "Isabelly", "Luci" };
+                string[] nome = { "Carolina Adelia da Silva Soares", "Natacha Resende", "Elielthon Pereira de Araujo", "Silvestre Nunes de Jesus Silva", "Isabelly Santos Assunção", "Lucilene Beltrão Castro" };
+                string[] cpfCnpj = { "08930229697", "05092615664", "05471641655", "02064837671", "06740401632", "85844560663" };
+                string[] email = { "carolina@gmail.com", "nat@gmail.com", "eli@gmail.com", "princess@gmail.com", "isa@gmail.com", "luci@gmail.com" };
+                string[] token = { "4gs6d4g6fsd", "16as1f9af", "41v9r4a", "87e9sa7f9sa7", "321da3d46", "j9k8g4hjn6." };
+                string[] senha = { "71nr6ad17r", "574m156e54", "i.g61i749", "9y871sr", "6c52.v", ".et8mam8s" };
+                string[] cnpj = { "20516886000138", "21347679000160", "18781070000190", "09166603000132", "23441261000142", "21161690000130" };
+                string[] razaoSocial = { "SAAE DE CORREGO FUNDO", "SAAE DE GUANHAES", "CAMARA PASSOS", "CISAB SUL - BOA ESPERANCA", "CISAB VICOSA", "DEMSUR MURIAE" };
+
+                //Sorteia index aleatorio
+                Random random = new Random();
+                int index = random.Next(login.Length);
+
+                //Conexao Localhost
+                cliente.BaseAddress = new Uri("http://localhost:64195/");
+                //Conexao Web
+                //cliente.BaseAddress = new Uri("https://pncp.gov.br/api/pncp/v1/usuarios/");
+
+                cliente.DefaultRequestHeaders.Accept.Clear();
+                cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
                 //Cria um novo usuario
                 Console.WriteLine("Criando usuario...");
                 Usuario usuario = new Usuario(1, login[index], nome[index], cpfCnpj[index], email[index], true, token[index], senha[index],
@@ -110,7 +110,7 @@ namespace Client
                 //await Put(usuario);
 
                 //Busca usuario atualizado
-                //Console.WriteLine("Pegando usuario...");
+                //Console.WriteLine("Buscando usuario...");
                 //usuario = await Get(url.PathAndQuery);
                 //MostraUsuario(usuario);
 
@@ -144,7 +144,7 @@ namespace Client
                     }
                 }
 
-                //Mostra arquivo
+                //Mostra arquivo JSON completo
                 Console.WriteLine(File.ReadAllText(arquivo));
                 Console.WriteLine("");
             }
